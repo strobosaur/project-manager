@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+// CONFIGURATION
 const firebaseConfig = {
   apiKey: "AIzaSyAYyKrLiCzuPZmgKmf5awxzCDtiZL-t4eM",
   authDomain: "project-manager-9f9ff.firebaseapp.com",
@@ -21,4 +22,5 @@ const projectAuth = firebase.auth();
 // TIMESTAMP
 const timestamp = firebase.firestore.Timestamp;
 
+// EXPORTS
 export { projectFirestore, projectAuth, timestamp }
