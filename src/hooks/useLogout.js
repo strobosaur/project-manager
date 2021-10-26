@@ -2,37 +2,28 @@ import { useState } from 'react';
 import { projectAuth } from '../firebase/fbConfig';
 import { useAuthContext } from './useAuthContext';
 
-export const useSignup = () => {
+const useLogout = () => {
   // DEFAULT STATES
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password, displayName) => {
+  const logout = async () => {
     // SET NEW STATES
     setError(null);
     setIsPending(true);
 
+    // TRY TO SIGN OUT USER
     try {
-      // TRY TO SIGN UP USER
-      const response = await projectAuth.createUserWithEmailAndPassword(email, password);
+      await projectAuth.signOut();
 
-      // CHECK FOR NO RESPONSE
-      if (!response) {
-        throw new Error('Could not signup user');
-      }
-
-      // CREATE NEW USER PROFILE
-      await response.user.updateProfile({ displayName });
-
-      // DISPATCH LOGIN ACTION
-      dispatch({ type: 'LOGIN', payload: response.user });
+      // DISPATCH LOG OUT ACTION
+      dispatch({ type: 'LOGOUT' });
 
       // UPDATE STATES
       setIsPending(false);
       setError(null);
     }
-    // CATCH ERRORS
     catch (err) {
       console.log(err.message);
       // UPDATE STATES
@@ -41,5 +32,5 @@ export const useSignup = () => {
     }
   }
 
-  return { error, isPending, signup }
+  return { logout, error, isPending }
 }
