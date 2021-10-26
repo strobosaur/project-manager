@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { projectAuth } from '../firebase/fbConfig';
 import { useAuthContext } from './useAuthContext';
 
-const useLogout = () => {
+export const useLogout = () => {
   // DEFAULT STATES
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
@@ -18,7 +18,7 @@ const useLogout = () => {
     try {
       await projectAuth.signOut();
 
-      // DISPATCH LOG OUT ACTION
+      // DISPATCH LOGOUT ACTION
       dispatch({ type: 'LOGOUT' });
 
       // UPDATE STATES
@@ -27,7 +27,9 @@ const useLogout = () => {
         setError(null);
       }
     }
+    // CATCH ERRORS
     catch (err) {
+      // UPDATE STATES
       if (!isCancelled) {
         console.log(err.message);
         setError(err.message);
@@ -41,5 +43,5 @@ const useLogout = () => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { logout, error, isPending }
+  return { logout, error, isPending };
 }
