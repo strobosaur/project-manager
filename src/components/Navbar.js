@@ -4,7 +4,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 
 // CSS STYLES
 import './Navbar.css';
-import Logo from '../assets/logo.svg';
+import Logo from '../assets/logo01.svg';
 
 export default function Navbar() {
   const { logout, isPending } = useLogout();
@@ -24,7 +24,7 @@ export default function Navbar() {
             <li><Link to="/signup">Sign Up</Link></li> 
           </>
         )}
-        
+
         { user && (
           <li>
             { !isPending && <button className="btn" onClick={logout}>Logout</button> }

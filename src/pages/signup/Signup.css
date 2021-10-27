@@ -2,8 +2,19 @@
   max-width: 360px;
   margin: 60px auto;
   padding: 40px;
-  border: 1px solid var(--input02);
+  border: 1px solid var(--primary-color01);
   box-shadow: 3px 3px 5px var(--shadow);
-  background: #fff;
+  background: var(--mid-color01);
   border-radius: 8px;
+}
+.auth-form h2 {
+  color: var(--primary-color01);
+}
+.auth-form label {
+  color: var(--primary-color01);
+}
+.auth-form input {
+  color: var(--text-color01);
+  border: 1px solid var(--primary-color01);
+  background-color: var(--bg-color01);
 }

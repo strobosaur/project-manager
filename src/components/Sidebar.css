@@ -1,11 +1,11 @@
 .sidebar {
   width: 300px;
   min-width: 300px;
-  background: var(--primary-color);
+  background: var(--mid-color01);
   min-height: 100vh;
   box-sizing: border-box;
   position: relative;
-  color: #fff;
+  color: var(--primary-color01);
 }
 .sidebar-content {
   position: fixed;
@@ -16,7 +16,7 @@
   text-align: center;
   letter-spacing: 1px;
   padding: 40px 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 8px solid var(--bg-color01);
 }
 .sidebar .links {
   margin-top: 80px;
@@ -30,18 +30,18 @@
   padding: 10px;
   text-decoration: none;
   width: 100%;
-  color: #fff;
+  color: var(--text-color01);
   box-sizing: border-box;
 }
 .sidebar .links img {
   margin: 0 10px;
-  filter: invert(100%);
+  filter: saturate(0%);
 }
 .sidebar .links a.active {
-  color: #555;
-  background: var(--bg-color);
+  color: var(--primary-color01);
+  background: var(--bg-color01);
   border-radius: 20px 0 0 20px;
 }
 .sidebar .links .active img {
-  filter: invert(40%);
+  filter: saturate(100%);
 }
