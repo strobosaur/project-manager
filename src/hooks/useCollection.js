@@ -16,26 +16,26 @@ export const useCollection = (collection, _query, _orderBy) => {
 
     // HANDLE QUERY
     if (query) {
-      ref = ref.where(...query);
+      collectionRef = collectionRef.where(...query);
     }
 
     // ORDER COLLECTION
     if (orderBy) {
-      ref = ref.orderBy(...orderBy);
+      collectionRef = collectionRef.orderBy(...orderBy);
     }
 
-    const unSubscribe = collectionRef.onSnapshot((snapshot) => {
+    const unSubscribe = collectionRef.onSnapshot(snapshot => {
       let results = [];
       snapshot.docs.forEach(doc => {
-        results.push({ ...doc.data(), id: doc.id });
-      })
+        results.push({ ...doc.data(), id: doc.id })
+      });
 
       // UPDATE STATES
       setDocuments(results);
       setError(null);
-    }, (err) => {
+    }, error => {
       // HANDLE ERROR
-      console.log(err);
+      console.log(error);
       setError('could not fetch data');
     })
 

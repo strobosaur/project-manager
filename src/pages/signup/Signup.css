@@ -2,7 +2,7 @@
   max-width: 360px;
   margin: 60px auto;
   padding: 40px;
-  border: 1px solid var(--primary-color01);
+  border: 1px dotted var(--primary-color01);
   box-shadow: 3px 3px 5px var(--shadow);
   background: var(--mid-color01);
   border-radius: 8px;
