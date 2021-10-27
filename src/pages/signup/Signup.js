@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSignup } from '../../hooks/useSignup';
 
 // CSS STYLES
 import './Signup.css';
@@ -10,10 +11,11 @@ export default function Signup() {
   const [userName, setUserName] = useState('');
   const [profileImage, setProfileImage] = useState(null);
   const [profileImageError, setProfileImageError] = useState(null);
+  const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password, userName, profileImage);
+    signup(email, password, userName, profileImage);
   }
 
   // FUNTION HANDLE IMAGE FILE UPLOADS
@@ -87,7 +89,9 @@ export default function Signup() {
         />
         {profileImageError && <div className="error">{profileImageError}</div>}
       </label>
-      <button className="btn">Sign Up</button>
+      { !isPending && <button className="btn">Sign Up</button> }
+      { isPending && <button className="btn" disabled>Signing Up...</button> }
+      { error && <div className="error">{ error }</div> }
     </form>
   )
 }
