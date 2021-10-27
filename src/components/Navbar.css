@@ -24,7 +24,6 @@
 .navbar .logo img {
   margin-right: 10px;
   width: 48px;
-  background-color: none;
 }
 .navbar a {
   color: var(--text-color01);

@@ -9,6 +9,7 @@ import Project from './pages/project/Project';
 import Signup from './pages/signup/Signup';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import UserList from './components/UserList';
 
 // CSS STYLES
 import './App.css';
@@ -47,6 +48,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        { user && <UserList /> }
       </BrowserRouter>
       )}
     </div>
