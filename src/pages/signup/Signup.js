@@ -35,8 +35,8 @@ export default function Signup() {
     }
 
     // CHECK FILESIZE
-    if (uploaded.size > 100000) {
-      setProfileImageError('Image file size is too large (max 100kb)');
+    if (uploaded.size > 1000000) {
+      setProfileImageError('Image file size is too large (max 1 mb)');
       return;
     }
 
