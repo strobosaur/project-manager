@@ -2,25 +2,25 @@
 
 /* variables */
 :root {
-  --heading-color: #444;
-  --text-color: #999;
-  --primary-color: #8d69f1;
+  --heading-color01: #ffbd26;
+  --text-color01: #fff;
+  --text-color02: #1EB1AC;
+  --primary-color01: #ffbd26;
+  --mid-color01: #20344d;
   --highlight-color: #d13267;
-  --bg-color: #f4f4f4;
+  --bg-color01: #1B293B;
   --error01: red;
   --error02: pink;
-  --input01: #777;
-  --input02: #ddd;
-  --text01: #333;
   --shadow: rgba(0,0,0,0.05);
 }
 
 /* base styles */
 body {
   font-family: Poppins, sans-serif;
+  color: var(--text-color01);
   margin: 0;
   font-size: 1.1em;
-  background: var(--bg-color);
+  background: var(--bg-color01);
 }
 ul, li, p, h1, h2, h3, h4 {
   margin: 0;
@@ -37,18 +37,18 @@ ul {
   display: inline-block;
 }
 .btn {
-  background: #fff;
+  background: var(--bg-color01);
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 8px;
   min-width: 160px;
-  color: var(--primary-color);
+  color: var(--primary-color01);
   cursor: pointer;
   font-size: 1em;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--primary-color01);
 }
 .btn:hover {
-  color: #fff;
-  background-color: var(--primary-color);
+  color: var(--bg-color01);
+  background-color: var(--primary-color01);
 }
 
 /* forms */
