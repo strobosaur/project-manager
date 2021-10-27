@@ -1,0 +1,41 @@
+.project-list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+.project-list a {
+  background-color: var(--mid-color01);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px var(--shadow-color01);
+  text-decoration: none;
+  color: inherit;
+}
+.project-list a:hover {
+  filter: brightness(105%);
+}
+.project-list h4 {
+  font-size: 0.9em;
+  color: var(--heading-color01);
+}
+.project-list p {
+  color: var(--text-color01);
+  font-size: 0.9em;
+}
+.project-list .assigned-to {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--primary-color01);
+}
+.project-list ul {
+  margin: 10px 0;
+  display: flex;
+}
+.project-list li {
+  margin-right: 10px;
+}
+.project-list .avatar {
+  width: 24px;
+  height: 24px;
+}
