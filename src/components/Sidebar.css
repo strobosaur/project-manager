@@ -1,5 +1,5 @@
 .sidebar {
-  width: 100%;
+  width: 300px;
   min-width: 300px;
   background: var(--primary-color);
   min-height: 100vh;
@@ -34,7 +34,7 @@
   box-sizing: border-box;
 }
 .sidebar .links img {
-  margin-left: 10px;
+  margin: 0 10px;
   filter: invert(100%);
 }
 .sidebar .links a.active {

@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 
 // CSS STYLES
 import './Sidebar.css'
+import DashboardIcon from '../assets/dashboard_icon2.svg';
+import PlusIcon from '../assets/plus_icon2.svg';
 
 export default function Sidebar() {
   return (
@@ -9,19 +11,19 @@ export default function Sidebar() {
       <div className="sidebar-content">
         <div className="user">
           {/* avatar & username */}
-          <p>Hey yser</p>
+          <p>Hey user</p>
         </div>
         <nav className="links">
           <ul>
             <li>
-              <NavLink to="/">
-                <img src="" alt="dashboard icon" />
+              <NavLink exact to="/">
+                <img src={DashboardIcon} alt="dashboard icon" />
                 <span>Dashboard</span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/create">
-                <img src="" alt="add project icon" />
+                <img src={PlusIcon} alt="add project icon" />
                 <span>Add new project</span>
               </NavLink>
             </li>
