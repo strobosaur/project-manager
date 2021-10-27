@@ -23,6 +23,7 @@ export default function Create() {
   const [category, setCategory] = useState('');
   const [assignedUsers, setAssignedUsers] = useState([]);
   const [users, setUsers] = useState([]);
+  const [formError, setFormError] = useState(null);
 
   // GET USERS FROM DATABASE
   const { documents } = useCollection('users');
@@ -40,9 +41,24 @@ export default function Create() {
   // FUNCTION HANDLE SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError(null);
+
+    // CHECK FOR NO CATEGORY
+    if (!category) {
+      setFormError('You must select a project category');
+      return;
+    }
+
+    // CHECK FOR NO ASSIGNED USERS
+    if (assignedUsers.length < 1) {
+      setFormError('Please assign at least one user to this project');
+      return;
+    }
+
     console.log(name, details, dueDate, category.value, assignedUsers);
   }
 
+  // RETURN CREATE PROJECT COMPONENT
   return (
     <div className="create-form">
       <h2 className="page-title">Create a new project</h2>
@@ -90,6 +106,7 @@ export default function Create() {
           />
         </label>
         <button className="btn">Add project</button>
+        { formError && <p className="error">{formError}</p>}
       </form>
     </div>
   )
