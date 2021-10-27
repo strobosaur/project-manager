@@ -12,6 +12,7 @@
   --input01: #777;
   --input02: #ddd;
   --text01: #333;
+  --shadow: rgba(0,0,0,0.05);
 }
 
 /* base styles */
