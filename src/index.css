@@ -33,7 +33,7 @@ ul {
 /* layout */
 .page-title {
   font-size: 1em;
-  color: var(--heading-color);
+  color: var(--heading-color01);
   display: inline-block;
 }
 .btn {
