@@ -4,7 +4,7 @@
   border-radius: 8px;
   padding: 32px;
   background: var(--mid-color01);
-  box-shadow: 3px 3px 5px var(--shadow);
+  /* box-shadow: 3px 3px 5px var(--shadow); */
 }
 .create-form h2 {
   color: var(--primary-color01);
