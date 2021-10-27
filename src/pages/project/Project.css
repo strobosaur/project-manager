@@ -1,0 +1,42 @@
+.project-details {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: start;
+  grid-gap: 60px;
+}
+
+.project-summary {
+  background-color: var(--mid-color01);
+  padding: 30px;
+  border-radius: 8px;
+}
+.project-summary .due-date {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: var(--text-color01);
+  border-bottom: 1px dotted var(--primary-color01);
+  padding-bottom: 16px;
+}
+.project-summary .details {
+  margin: 16px 0;
+  color: var(--text-color01);
+  line-height: 1.8em;
+  font-size: 0.9em;
+  padding-bottom: 8px;
+}
+.project-summary h4 {
+  color: var(--heading-color01);
+  font-size: 0.9em;
+}
+.project-summary .assigned-users {
+  display: flex;
+  margin-top: 20px;
+}
+.project-summary .assigned-users .avatar {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+.project-summary + .btn {
+  margin-top: 20px;
+}

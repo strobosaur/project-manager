@@ -20,3 +20,6 @@
 .create-form textarea {
   resize: none;
 }
+.create-form .select {
+  background-color: var(--bg-color01);
+}
