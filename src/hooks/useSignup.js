@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { projectAuth, projectStorage } from '../firebase/fbConfig';
+import { projectAuth, projectStorage, projectFirestore } from '../firebase/fbConfig';
 import { useAuthContext } from './useAuthContext';
 
 export const useSignup = () => {
@@ -30,6 +30,13 @@ export const useSignup = () => {
 
       // CREATE NEW USER PROFILE
       await response.user.updateProfile({ displayName, photoURL: imgURL });
+
+      // CREATE FIRESTORE USER DOCUMENT
+      await projectFirestore.collection('users').doc(response.user.uid).set({
+        online: true,
+        displayName,
+        photoURL: imgURL
+      });
 
       // DISPATCH LOGIN ACTION
       dispatch({ type: 'LOGIN', payload: response.user });
