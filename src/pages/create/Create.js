@@ -3,6 +3,8 @@ import Select from 'react-select';
 import { useCollection } from '../../hooks/useCollection';
 import { timestamp } from '../../firebase/fbConfig';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { useFirestore } from '../../hooks/useFirestore';
+import { useHistory } from 'react-router-dom';
 
 // CSS STYLES
 import './Create.css';
@@ -18,6 +20,9 @@ const categories = [
 
 // MAIN COMPONENT
 export default function Create() {
+  // ADD DOCUMENT FUNCTION
+  const { addDocument, response } = useFirestore('projects');
+
   // DEFAULT STATES
   const [name, setName] = useState('');
   const [details, setDetails] = useState('');
@@ -28,6 +33,7 @@ export default function Create() {
   const [users, setUsers] = useState([]);
   const [formError, setFormError] = useState(null);
   const { user } = useAuthContext();
+  const history = useHistory();
 
   // GET USERS FROM DATABASE
   const { documents } = useCollection('users');
@@ -43,7 +49,7 @@ export default function Create() {
   }, [documents]);
 
   // FUNCTION HANDLE SUBMIT
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError(null);
 
@@ -86,7 +92,11 @@ export default function Create() {
       assignedUsersList
     }
 
-    console.log(project);
+    // ADD DOCUMENT TO DATABASE
+    await addDocument(project);
+    if (!response.error) {
+      history.push('/');
+    }
   }
 
   // RETURN CREATE PROJECT COMPONENT

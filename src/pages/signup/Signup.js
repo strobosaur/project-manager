@@ -47,7 +47,6 @@ export default function Signup() {
 
     // UPDATE FILE
     setProfileImage(uploaded);
-    console.log('profile image updated');
   }
 
   return (
