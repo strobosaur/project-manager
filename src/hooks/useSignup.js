@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { projectAuth } from '../firebase/fbConfig';
+import { projectAuth, projectStorage } from '../firebase/fbConfig';
 import { useAuthContext } from './useAuthContext';
 
 export const useSignup = () => {
@@ -9,7 +9,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password, displayName) => {
+  const signup = async (email, password, userName, profileImage) => {
     // SET NEW STATES
     setError(null);
     setIsPending(true);
@@ -23,8 +23,13 @@ export const useSignup = () => {
         throw new Error('Could not signup user');
       }
 
+      // HANDLE USER PROFILE IMAGE UPLOAD
+      const uploadPath = `profile_images/${response.user.uid}/${profileImage.name}`;
+      const uploadedImage = await projectStorage.ref(uploadPath).put(profileImage);
+      const imgURL = await uploadedImage.ref.getDownloadURL();
+
       // CREATE NEW USER PROFILE
-      await response.user.updateProfile({ displayName });
+      await response.user.updateProfile({ userName, imageURL: imgURL });
 
       // DISPATCH LOGIN ACTION
       dispatch({ type: 'LOGIN', payload: response.user });
