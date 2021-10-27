@@ -1,0 +1,22 @@
+.create-form {
+  max-width: 600px;
+  /* border: 1px dotted var(--primary-color01); */
+  border-radius: 8px;
+  padding: 32px;
+  background: var(--mid-color01);
+  box-shadow: 3px 3px 5px var(--shadow);
+}
+.create-form h2 {
+  color: var(--primary-color01);
+}
+.create-form label {
+  color: var(--primary-color01);
+}
+.create-form input, textarea {
+  color: var(--text-color01);
+  border: 1px solid var(--primary-color01);
+  background-color: var(--bg-color01);
+}
+.create-form textarea {
+  resize: none;
+}
