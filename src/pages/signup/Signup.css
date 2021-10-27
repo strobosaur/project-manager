@@ -5,4 +5,5 @@
   border: 1px solid var(--input02);
   box-shadow: 3px 3px 5px var(--shadow);
   background: #fff;
+  border-radius: 8px;
 }
