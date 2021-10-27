@@ -9,7 +9,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password, userName, profileImage) => {
+  const signup = async (email, password, displayName, profileImage) => {
     // SET NEW STATES
     setError(null);
     setIsPending(true);
@@ -29,7 +29,7 @@ export const useSignup = () => {
       const imgURL = await uploadedImage.ref.getDownloadURL();
 
       // CREATE NEW USER PROFILE
-      await response.user.updateProfile({ userName, imageURL: imgURL });
+      await response.user.updateProfile({ displayName, photoURL: imgURL });
 
       // DISPATCH LOGIN ACTION
       dispatch({ type: 'LOGIN', payload: response.user });
