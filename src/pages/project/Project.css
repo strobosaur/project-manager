@@ -10,9 +10,14 @@
   padding: 30px;
   border-radius: 8px;
 }
+.project-summary .created-by {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  color: var(--text-color01);
+}
 .project-summary .due-date {
   margin: 10px 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: var(--text-color01);
   border-bottom: 1px dotted var(--primary-color01);
   padding-bottom: 16px;
