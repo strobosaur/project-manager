@@ -1,0 +1,36 @@
+.project-filter {
+  margin: 30px auto;
+}
+.project-filter nav {
+  display: flex;
+  padding: 10px;
+  background-color: var(--mid-color01);
+  border-radius: 8px;
+}
+.project-filter p {
+  color: var(--text-color01);
+  font-size: 0.7em;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+.project-filter button {
+  background: transparent;
+  padding: 0 8px;
+  border: 0;
+  font-family: inherit;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: var(--text-color02);
+  cursor: pointer;
+  border-right: 1px dotted var(--primary-color01);
+  font-size: 0.7em;
+}
+.project-filter button:hover {
+  color: var(--text-color01);
+}
+.project-filter button:last-child {
+  border: 0;
+}
+.project-filter button.active {
+  color: var(--primary-color01);
+}
