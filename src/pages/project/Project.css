@@ -42,7 +42,7 @@
   width: 40px;
   height: 40px;
 }
-.project-summary + .btn {
+.project-summary button {
   margin-top: 20px;
 }
 
@@ -89,7 +89,7 @@
 }
 .comment-date {
   color: var(--text-color01);
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin: 4px 0 10px;
 }
 .comment-content {

@@ -12,7 +12,8 @@
   margin-bottom: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--primary-color01);
-  font-size: 1.2em;
+  font-size: 1.0em;
+  letter-spacing: 0.15em;
 }
 .user-list .user-list-item {
   display: flex;
