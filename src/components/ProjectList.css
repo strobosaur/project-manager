@@ -21,7 +21,7 @@
 }
 .project-list p {
   color: var(--text-color01);
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .project-list .assigned-to {
   margin-top: 20px;
