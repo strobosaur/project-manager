@@ -40,3 +40,22 @@
 .project-summary + .btn {
   margin-top: 20px;
 }
+
+/* PROJECT COMMENTS */
+.project-comments {
+  border-radius: 8px;
+  background: var(--mid-color01);
+  padding: 30px;
+}
+.project-comments h4 {
+  color: var(--heading-color01);
+}
+.project-comments label {
+  margin-bottom: 0px;
+}
+.project-comments textarea {
+  min-height: 40px;
+  font-size: 1.5em;
+  margin-bottom: 16px;
+  resize: none;
+}
