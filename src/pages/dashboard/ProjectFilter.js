@@ -1,13 +1,10 @@
-import { useState } from 'react';
-
+// PROJECT FILTER LIST
 const filterList = ['all', 'mine', 'development', 'design', 'finance', 'recreation', 'social'];
 
-export default function ProjectFilter() {
-  const [currentFilter, setCurrentFilter] = useState('all');
+export default function ProjectFilter({ currentFilter, changeFilter }) {
 
   const handleClick = (newFilter) => {
-    console.log(newFilter);
-    setCurrentFilter(newFilter);
+    changeFilter(newFilter);
   }
 
   return (
