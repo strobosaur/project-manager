@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { timestamp } from '../../firebase/fbConfig';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { useFirestore } from '../../hooks/useFirestore';
 
-export default function ProjectComments() {
+export default function ProjectComments({ project }) {
+  const { updateDocument, response } = useFirestore('projects');
   const [newComment, setNewComment] = useState('');
   const { user } = useAuthContext();
 
+  // FUNCTION HANDLE SUBMIT COMMENT
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // CREATE COMMENT OBJECT
     const commentToAdd = {
       displayName: user.displayName,
       photoURL: user.photoURL,
@@ -17,7 +21,14 @@ export default function ProjectComments() {
       id: Math.random()
     }
 
-    console.log(commentToAdd);
+    // ADD COMMENT TO PROJECT DOCUMENT IN DB
+    await updateDocument(project.id, {
+      comments: [...project.comments, commentToAdd]
+    });
+    // RESET NEW COMMENT STATE
+    if (!response.error) {
+      setNewComment('');
+    }
   }
 
   return (
