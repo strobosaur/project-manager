@@ -59,3 +59,35 @@
   margin-bottom: 16px;
   resize: none;
 }
+
+/* COMMENT LIST */
+.project-comments h4 {
+  color: var(--heading-color01);
+}
+.project-comments li {
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
+  border: 1px dotted var(--primary-color01);
+  background: var(--mid-color01);
+}
+.comment-author {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color01);
+}
+.comment-author .avatar {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.comment-date {
+  color: var(--text-color01);
+  font-size: 0.8em;
+  margin: 4px 0 10px;
+}
+.comment-content {
+  color: var(--text-color01);
+  font-size: 0.9em;
+}
