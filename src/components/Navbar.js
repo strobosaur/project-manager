@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 
@@ -9,11 +9,15 @@ import Logo from '../assets/logo01.svg';
 export default function Navbar() {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
+  const history = useHistory();
+  const handleClickLogo = () => {    
+    history.push('/');
+  }
 
   return (
     <div className="navbar">
       <ul>
-        <li className="logo">
+        <li className="logo" onClick={handleClickLogo}>
           <img src={Logo} alt="page logo" />
           <span>Project manager</span>
         </li>

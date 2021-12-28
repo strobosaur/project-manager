@@ -114,7 +114,7 @@ export default function Create() {
           />
         </label>
         <label>
-          <span>Project name:</span>
+          <span>Project description:</span>
           <textarea
             required
             type="text"
