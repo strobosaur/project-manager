@@ -20,6 +20,10 @@
   display: flex;
   align-items: center;
   margin-right: auto;
+  cursor: pointer;
+}
+.navbar .logo :hover {
+  filter:brightness(115%);
 }
 .navbar .logo img {
   margin-right: 24px;
